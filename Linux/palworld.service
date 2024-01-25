@@ -1,0 +1,14 @@
+[Unit]
+Description=Palworld-Linux-Server
+After=syslog.target
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=5
+StartLimitInterval=5
+StartLimitBurst=5
+Type=simple
+ExecStart=/bin/sh /root/paru-shell/start-pal.sh
+ExecReload=/bin/sh /root/paru-shell/restart-pal.sh
+ExecStop=/bin/sh /root/paru-shell/stop-pal.sh
